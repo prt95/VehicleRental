@@ -13,6 +13,12 @@ You can run the jar file created by the mvn package command like so
 
 `java -jar target/application.jar`
 
+## Running the application with file input
+
+You can provide commands to application using file as below
+
+`java -jar target/application.jar` input.txt
+
 ## Running tests
 
 The `mvn package` command runs all the unit tests and also packages the application in the form of a jar file. If you
