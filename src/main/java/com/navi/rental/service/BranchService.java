@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface BranchService {
-    boolean onboardBranch(String branchName, List<VehicleType> vehicleTypeList);
+    boolean onboardBranch(String branchId, List<VehicleType> vehicleTypeList);
 
     Optional<Branch> getBranchById(String branchId);
 }

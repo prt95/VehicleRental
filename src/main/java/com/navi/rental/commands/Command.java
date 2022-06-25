@@ -6,9 +6,10 @@ import com.navi.rental.exceptions.InvalidCommandParameterException;
 import com.navi.rental.service.BranchService;
 import com.navi.rental.service.impl.BranchServiceImpl;
 import com.navi.rental.storage.BranchDao;
+import org.apache.commons.lang3.StringUtils;
 
 public abstract class Command {
-    private String branchName;
+    private String branchId;
     private String helpText = "";
     private BranchService branchService = new BranchServiceImpl(BranchDao.getInstance());
 
@@ -21,13 +22,17 @@ public abstract class Command {
     }
 
     public boolean parse(String[] params) throws InvalidCommandParameterException {
-        this.branchName = params[0];
+        this.branchId = params[0];
         return true;
     }
 
     public abstract boolean validate() throws CommandExecutionException;
 
     public boolean validateBranchExists(String branchId) {
+        if (StringUtils.isEmpty(branchId)) {
+            System.out.println("Branch name shouldn't be empty");
+            return false;
+        }
         if (!branchService.getBranchById(branchId).isPresent()) {
             throw new BranchDoesNotExistException("Branch doesn't exist");
         }
@@ -36,12 +41,12 @@ public abstract class Command {
 
     public abstract boolean execute();
 
-    public String getBranchName() {
-        return branchName;
+    public String getbranchId() {
+        return branchId;
     }
 
-    public void setBranchName(String branchName) {
-        this.branchName = branchName;
+    public void setbranchId(String branchId) {
+        this.branchId = branchId;
     }
 
     public String getHelpText() {

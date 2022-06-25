@@ -6,8 +6,10 @@ import com.navi.rental.service.impl.BookingServiceImpl;
 import com.navi.rental.storage.BookingDao;
 import com.navi.rental.storage.BranchDao;
 import com.navi.rental.storage.VehicleDao;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DisplayVehicleCommand extends Command {
     private long startTime;
@@ -33,15 +35,15 @@ public class DisplayVehicleCommand extends Command {
 
     @Override
     public boolean validate() {
-        super.validateBranchExists(getBranchName());
+        super.validateBranchExists(getbranchId());
         return true;
     }
 
     @Override
     public boolean execute() {
-        List<Vehicle> vehicles = bookingService.listVehicles(getBranchName(), startTime, endTime);
-        vehicles.stream().forEach(v -> System.out.print(v.getId() + ", "));
-        System.out.println();
+        List<Vehicle> vehicles = bookingService.listVehicles(getbranchId(), startTime, endTime);
+        System.out.println(StringUtils.join(vehicles.stream().map(vehicle -> vehicle.getId())
+                .collect(Collectors.toList()), ", "));
         return true;
     }
 

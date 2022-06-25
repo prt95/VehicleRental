@@ -36,7 +36,7 @@ public class AddBranchCommand extends Command {
 
     @Override
     public boolean validate() {
-        if (getBranchService().getBranchById(getBranchName()).isPresent()) {
+        if (getBranchService().getBranchById(getbranchId()).isPresent()) {
             System.out.println("Branch already exists");
             return false;
         }
@@ -45,7 +45,7 @@ public class AddBranchCommand extends Command {
 
     @Override
     public boolean execute() {
-        boolean result = getBranchService().onboardBranch(getBranchName(), vehicleTypeList);
+        boolean result = getBranchService().onboardBranch(getbranchId(), vehicleTypeList);
         System.out.println(result);
         return true;
     }

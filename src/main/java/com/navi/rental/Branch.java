@@ -6,8 +6,8 @@ public class Branch {
     String branchId;
     List<VehicleType> vehicleTypeList;
 
-    public Branch(String branchName, List<VehicleType> vehicleTypeList) {
-        this.branchId = branchName;
+    public Branch(String branchId, List<VehicleType> vehicleTypeList) {
+        this.branchId = branchId;
         this.vehicleTypeList = vehicleTypeList;
     }
 

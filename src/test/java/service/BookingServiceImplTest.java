@@ -66,7 +66,7 @@ public class BookingServiceImplTest {
         Booking booking = new Booking(vehicle1, 2000, 2, 3, 1);
         Mockito.when(bookingDao.getBookingsByVehicleId("V1")).thenReturn(Arrays.asList(booking));
         Mockito.when(vehicleDao.getVehicleByBranchId("B1")).thenReturn(Arrays.asList(vehicle1, vehicle2));
-        Assertions.assertIterableEquals(service.listVehicles("B1", 1, 5),Arrays.asList(vehicle2));
+        Assertions.assertIterableEquals(service.listVehicles("B1", 1, 5), Arrays.asList(vehicle2));
     }
 
 

@@ -24,7 +24,7 @@ public class DisplayVehicleCommandTest {
     @Test
     public void testParseCommandParametersPopulatedCorrectly() {
         assertTrue(command.parse(new String[]{"B1", "1", "6"}));
-        assertEquals(command.getBranchName(), "B1");
+        assertEquals(command.getbranchId(), "B1");
         assertEquals(command.getStartTime(), 1);
         assertEquals(command.getEndTime(), 6);
     }

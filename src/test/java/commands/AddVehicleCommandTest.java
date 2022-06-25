@@ -25,7 +25,7 @@ public class AddVehicleCommandTest {
     @Test
     public void testParseCommandParametersPopulatedCorrectly() {
         assertTrue(command.parse(new String[]{"B1", "VAN", "V1", "300"}));
-        assertEquals(command.getBranchName(), "B1");
+        assertEquals(command.getbranchId(), "B1");
         assertEquals(command.getVehicleId(), "V1");
         assertEquals(command.getVehicleType(), VehicleType.VAN);
         assertEquals(command.getPricePerHour(), 300);

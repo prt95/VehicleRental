@@ -25,7 +25,7 @@ public class BookCommandTest {
     @Test
     public void testParseCommandParametersPopulatedCorrectly() {
         assertTrue(command.parse(new String[]{"B1", "VAN", "1", "5"}));
-        assertEquals(command.getBranchName(), "B1");
+        assertEquals(command.getbranchId(), "B1");
         assertEquals(command.getVehicleType(), VehicleType.VAN);
         assertEquals(command.getStartTime(), 1);
         assertEquals(command.getEndTime(), 5);

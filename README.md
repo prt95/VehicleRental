@@ -25,4 +25,5 @@ The `mvn package` command runs all the unit tests and also packages the applicat
 just want to run the tests without packaging it, then you can use `mvn test` command.
 
 ## Coverage
+
 Covers more that 50% of lines.

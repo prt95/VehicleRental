@@ -16,8 +16,8 @@ public class BranchServiceImpl implements BranchService {
     }
 
     @Override
-    public boolean onboardBranch(String branchName, List<VehicleType> vehicleTypeList) {
-        Branch branch = new Branch(branchName, vehicleTypeList);
+    public boolean onboardBranch(String branchId, List<VehicleType> vehicleTypeList) {
+        Branch branch = new Branch(branchId, vehicleTypeList);
         return branchDao.save(branch);
     }
 

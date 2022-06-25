@@ -1,14 +1,10 @@
 package commands;
 
-import com.navi.rental.Branch;
 import com.navi.rental.VehicleType;
 import com.navi.rental.commands.AddBranchCommand;
 import com.navi.rental.exceptions.InvalidCommandParameterException;
-import com.navi.rental.service.BranchService;
-import com.navi.rental.storage.BranchDao;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import java.util.Arrays;
 
@@ -33,14 +29,14 @@ public class AddBranchCommandTest {
     @Test
     public void testParseCommandParametersPopulatedCorrectly() {
         assertTrue(command.parse(new String[]{"B1", "CAR,VAN"}));
-        assertEquals(command.getBranchName(), "B1");
+        assertEquals(command.getbranchId(), "B1");
         Assertions.assertIterableEquals(command.getVehicleTypeList(), Arrays.asList(VehicleType.CAR, VehicleType.VAN));
     }
 
     @Test
     public void testExecuteCommand() {
         command.setVehicleTypeList(Arrays.asList(VehicleType.CAR, VehicleType.VAN));
-        command.setBranchName("B1");
+        command.setbranchId("B1");
         assertTrue(command.execute());
     }
 

@@ -34,13 +34,13 @@ public class BookCommand extends Command {
 
     @Override
     public boolean validate() {
-        super.validateBranchExists(getBranchName());
+        super.validateBranchExists(getbranchId());
         return true;
     }
 
     @Override
     public boolean execute() {
-        long price = bookingService.book(getBranchName(), vehicleType, startTime, endTime);
+        long price = bookingService.book(getbranchId(), vehicleType, startTime, endTime);
         System.out.println(price);
         return true;
     }
