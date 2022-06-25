@@ -3,7 +3,6 @@
 You can build and package the application in the form of a jar file using maven -
 
 ```sh
-cd VehicleRental
 mvn clean package
 ```
 
@@ -11,13 +10,13 @@ mvn clean package
 
 You can run the jar file created by the mvn package command like so
 
-`java -jar target/application.jar`
+`java -jar target/VehicleRental-1.0-SNAPSHOT.jar`
 
 ## Running the application with file input
 
 You can provide commands to application using file as below
 
-`java -jar target/application.jar` input.txt
+`java -jar target/VehicleRental-1.0-SNAPSHOT.jar` input.txt
 
 ## Running tests
 
