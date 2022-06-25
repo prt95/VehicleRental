@@ -10,13 +10,13 @@ mvn clean package
 
 You can run the jar file created by the mvn package command like so
 
-`java -jar target/VehicleRental-1.0-SNAPSHOT.jar`
+`java -jar target/VehicleRental-1.0-SNAPSHOT-jar-with-dependencies.jar`
 
 ## Running the application with file input
 
 You can provide commands to application using file as below
 
-`java -jar target/VehicleRental-1.0-SNAPSHOT.jar` input.txt
+`java -jar target/VehicleRental-1.0-SNAPSHOT-jar-with-dependencies.jar  input.txt`
 
 ## Running tests
 
