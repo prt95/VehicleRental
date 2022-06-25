@@ -3,7 +3,7 @@
 You can build and package the application in the form of a jar file using maven -
 
 ```sh
-cd application
+cd VehicleRental
 mvn clean package
 ```
 
